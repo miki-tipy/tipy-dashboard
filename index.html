@@ -189,6 +189,7 @@
   <button class="tab-btn" onclick="switchTab('ops',this)">⚙️ 運営改善</button>
   <button class="tab-btn" onclick="switchTab('listing',this)">🏠 リスティング</button>
   <button class="tab-btn" onclick="switchTab('note',this)">✍️ note</button>
+  <button class="tab-btn" onclick="switchTab('done',this)">✅ 完了済み</button>
 </div>
 
 <!-- ========== TAB: 閑散期対策 ========== -->
@@ -296,7 +297,7 @@
         <tr>
           <td><span class="priority-badge pri-3">③</span></td>
           <td><span class="task-text">箱根の帰りに小田原に泊まる理由</span></td>
-          <td><span class="task-text">「箱根 宿泊」からの流入・箱根旅行者へのリーチ</span><div class="task-detail">箱根観光後に小田原泊というアクションパターンを訴求。</div></td>
+          <td><span class="task-text">「箱根 宿泊」からの流入・箱根旅行者へのリーチ</span><div class="task-detail">箱根観光後に小田原泊という行動パターンを訴求。</div></td>
           <td><span class="status-badge status-todo">要対応</span></td>
         </tr>
         <tr>
@@ -336,7 +337,7 @@
           <td><span class="priority-badge pri-1">①</span></td>
           <td><span class="property-tag tag-house">house</span> <span class="property-tag tag-nook">nook</span></td>
           <td><span class="property-tag tag-booking">Booking.com</span></td>
-          <td><span class="task-text">Early Booker Deal 設定（先の予約を増やす）</span><div class="task-detail">30日前予約-10%・60日前-15%。5/9〜7/19対象。</div></td>
+          <td><span class="task-text">Early Booker Deal 設定（先の予約を増やす）</span><div class="task-detail">30日前予約-10%、60日前-15%。5/9〜7/19対象。</div></td>
           <td><span class="status-badge status-todo">要対応</span></td>
         </tr>
         <tr class="urgent-row">
@@ -406,7 +407,7 @@
     </div>
   </div>
 
-  <div class="section">
+  <div class="section" style="display:none;" id="pricelabs-done-section">
     <div class="section-title">✅ 完了済みタスク（PriceLabs）</div>
     <table class="task-table">
       <thead><tr><th>日付</th><th>物件</th><th>施策</th><th>内容</th><th>ステータス</th></tr></thead>
@@ -415,7 +416,7 @@
         <tr class="new-row"><td class="date-cell">2026/4/26</td><td><span class="property-tag tag-hanare">hanare</span></td><td><span class="task-text">Min Price 引き上げ</span></td><td><span class="task-text">全4室 ¥9,000→<strong>¥12,000</strong>（ナチュラル・レトロ・ヴィンテージ・タタミ）</span></td><td><span class="status-badge status-done">✓ 完了</span></td></tr>
         <tr class="new-row"><td class="date-cell">2026/4/26</td><td><span class="property-tag tag-nook">nook</span></td><td><span class="task-text">Base / Min Price 引き下げ</span></td><td><span class="task-text">Base ¥34,356→<strong>¥28,000</strong>、Min ¥22,600→<strong>¥20,000</strong></span></td><td><span class="status-badge status-done">✓ 完了</span></td></tr>
         <tr class="new-row"><td class="date-cell">2026/4/26</td><td><span class="property-tag tag-halo">HALO</span></td><td><span class="task-text">Min Price 修正</span></td><td><span class="task-text">ツイン ¥10,500→<strong>¥12,000</strong>（損益分岐点¥11,842割れを修正）</span></td><td><span class="status-badge status-done">✓ 完了</span></td></tr>
-        <tr><td class="date-cell">2026/4/25</td><td><span class="property-tag tag-hanare">hanare</span></td><td><span class="task-text">Last Minute割引 強化</span></td><td><span class="task-text">グループ22% → 個室35% Gradual（7日以内）</span></td><td><span class="status-badge status-done">✓ 完了</span></td></tr>
+        <tr><td class="date-cell">2026/4/25</td><td><span class="property-tag tag-hanare">hanare</span></td><td><span class="task-text">Last Minute割引 強化</span></td><td><span class="task-text">グループ22% → 個別35% Gradual（7日以内）</span></td><td><span class="status-badge status-done">✓ 完了</span></td></tr>
         <tr><td class="date-cell">2026/4/25</td><td><span class="property-tag tag-halo">HALO</span></td><td><span class="task-text">Last Minute割引 強化</span></td><td><span class="task-text">25% → 35% Gradual（7日以内）</span></td><td><span class="status-badge status-done">✓ 完了</span></td></tr>
       </tbody>
     </table>
@@ -426,7 +427,7 @@
     <table class="task-table">
       <thead><tr><th>優先度</th><th>物件</th><th>施策</th><th>内容・理由</th><th>ステータス</th></tr></thead>
       <tbody>
-        <tr><td><span class="priority-badge pri-1">①</span></td><td><span class="property-tag tag-house">house</span></td><td><span class="task-text">Min Price 確認・調整</span>td><td><span class="task-text">稼働45.6%・Min ¥28,000前後に調整</span><div class="task-detail">損益分岐 ¥25,377。現在Min未設定</div></td><td><span class="status-badge status-todo">要対応</span></td></tr>
+        <tr><td><span class="priority-badge pri-1">①</span></td><td><span class="property-tag tag-house">house</span></td><td><span class="task-text">Min Price 確認・調整</span></td><td><span class="task-text">稼働45.6%・Min ¥28,000前後に調整</span><div class="task-detail">損益分岐 ¥25,377。現在Min未設定</div></td><td><span class="status-badge status-todo">要対応</span></td></tr>
         <tr><td><span class="priority-badge pri-2">②</span></td><td><span class="property-tag tag-room">room</span></td><td><span class="task-text">週末乗数 引き上げ</span></td><td><span class="task-text">稼働71.9%・週末単価をもっと上げる</span><div class="task-detail">推奨ADR ¥19,800（現状¥17,968から+10%）</div></td><td><span class="status-badge status-todo">要対応</span></td></tr>
         <tr><td><span class="priority-badge pri-4">検討</span></td><td><span class="property-tag tag-nook">nook</span></td><td><span class="task-text">Far Out Premium 無効化</span></td><td><span class="task-text">60日以降+20%が先の予約を遠ざけている可能性</span></td><td><span class="status-badge status-pending">検討中</span></td></tr>
       </tbody>
@@ -445,7 +446,7 @@
       <thead><tr><th>カテゴリ</th><th>物件</th><th>タスク</th><th>内容・数値</th><th>ステータス</th></tr></thead>
       <tbody>
         <tr class="urgent-row"><td><span class="property-tag tag-ops">既存物件</span></td><td><span class="property-tag tag-all">既存4物件</span></td><td><span class="task-text">集客力低下の原因調査</span></td><td><span class="task-text">YTD前年比 <strong style="color:#ef4444">-8.7%</strong></span><div class="task-detail">OTAランキング・レビュー・ADR戦略を再検証</div></td><td><span class="status-badge status-urgent">🚨 緊急</span></td></tr>
-        <tr class="urgent-row"><td><span class="property-tag tag-ops">キャンセル</span></td><td><span class="property-tag tag-all">全物件</span></td><td><span class="task-text">キャンセル率 29.3% 対策</span></td><td><span class="task-text">直近30日の82件キャンセル（有効198件中）</span><div class="task-detail">ノンリファンダブルプラン導入も検討</div></td><td><span class="status-badge status-urgent">🚨 緊急</span></td></tr>
+        <tr class="urgent-row"><td><span class="property-tag tag-ops">キャンセル</span></td><td><span class="property-tag tag-all">全物件</span></td><td><span class="task-text">キャンセル率 29.3% 対策</span></td><td><span class="task-text">直近30日で82件キャンセル（有効198件中）</span><div class="task-detail">ノンリファンダブルプラン導入も検討</div></td><td><span class="status-badge status-urgent">🚨 緊急</span></td></tr>
         <tr><td><span class="property-tag tag-ops">財務</span></td><td><span class="property-tag tag-all">全物件</span></td><td><span class="task-text">人件費比率の改善</span></td><td><span class="task-text">19.1% → 29.7%（<strong style="color:#ef4444">+10.6pt</strong>）</span></td><td><span class="status-badge status-todo">要対応</span></td></tr>
       </tbody>
     </table>
@@ -518,20 +519,96 @@
 </div>
 </div>
 
+<!-- ========== TAB: 完了済み ========== -->
+<div id="tab-done" class="tab-content">
+<div class="container">
+  <div class="banner banner-green">
+    <div class="icon">✅</div>
+    <div>
+      <div class="title">完了済みタスク一覧</div>
+      <div class="body">全タブの完了済みタスクをまとめて表示しています。タスクが完了すると自動的にここに反映されます。</div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="section-title">✅ 完了済みタスク（全カテゴリ）</div>
+    <table class="task-table" id="done-table">
+      <thead><tr><th>カテゴリ</th><th>物件</th><th>タスク / 内容</th><th>完了日</th><th>ステータス</th></tr></thead>
+      <tbody id="done-tbody">
+        <!-- JSで動的に挿入 -->
+      </tbody>
+    </table>
+    <div id="done-empty" class="info-box" style="display:none;">まだ完了済みタスクはありません。</div>
+  </div>
+</div>
+</div>
+
 <script>
   const now = new Date();
   const dateStr = now.toLocaleDateString('ja-JP', { year:'numeric', month:'long', day:'numeric', weekday:'short' });
   document.getElementById('today-date').innerHTML = `最終更新<br>${dateStr}`;
+
+  // タブ名マップ
+  const TAB_LABELS = {
+    'kansan':    '🌿 閑散期対策',
+    'promo':     '🎯 OTAプロモ',
+    'pricelabs': '📊 PriceLabs',
+    'ops':       '⚙️ 運営改善',
+    'listing':   '🏠 リスティング',
+    'note':      '✍️ note',
+  };
+
+  function buildDoneTab() {
+    const tbody = document.getElementById('done-tbody');
+    tbody.innerHTML = '';
+    let count = 0;
+
+    document.querySelectorAll('.tab-content:not(#tab-done)').forEach(tabEl => {
+      const tabId = tabEl.id.replace('tab-', '');
+      const tabLabel = TAB_LABELS[tabId] || tabId;
+
+      tabEl.querySelectorAll('tr').forEach(row => {
+        const doneCell = row.querySelector('.status-done');
+        if (!doneCell) return;
+
+        const propTags = Array.from(row.querySelectorAll('.property-tag'))
+          .map(t => t.outerHTML).join(' ');
+
+        const taskText = row.querySelector('.task-text');
+        const taskName = taskText ? taskText.textContent.trim() : '—';
+        const taskDetail = row.querySelector('.task-detail');
+        const detailHtml = taskDetail ? `<div class="task-detail">${taskDetail.innerHTML}</div>` : '';
+
+        const dateCell = row.querySelector('.date-cell');
+        const dateText = dateCell ? dateCell.textContent.trim() : '—';
+
+        const tr = document.createElement('tr');
+        tr.className = 'new-row';
+        tr.innerHTML = `
+          <td><span class="property-tag tag-ops" style="font-size:10px;">${tabLabel}</span></td>
+          <td>${propTags || '<span class="property-tag tag-all">—</span>'}</td>
+          <td><span class="task-text">${taskName}</span>${detailHtml}</td>
+          <td class="date-cell">${dateText}</td>
+          <td>${doneCell.outerHTML}</td>
+        `;
+        tbody.appendChild(tr);
+        count++;
+      });
+    });
+
+    document.getElementById('done-empty').style.display = count === 0 ? 'block' : 'none';
+  }
 
   function switchTab(tabId, btn) {
     document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
     document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
     document.getElementById('tab-' + tabId).classList.add('active');
     btn.classList.add('active');
+    if (tabId === 'done') buildDoneTab();
     updateCounts();
   }
+
   function updateCounts() {
-    document.getElementById('count-done').textContent    = document.querySelectorAll('.status-done').length;
+    document.getElementById('count-done').textContent    = document.querySelectorAll('.tab-content:not(#tab-done) .status-done').length;
     document.getElementById('count-urgent').textContent  = document.querySelectorAll('.status-urgent').length;
     document.getElementById('count-todo').textContent    = document.querySelectorAll('.status-todo').length;
     document.getElementById('count-wip').textContent     = document.querySelectorAll('.status-wip').length;
