@@ -249,8 +249,8 @@
         <tr>
           <td><span class="priority-badge pri-1">①</span></td>
           <td><span class="task-text">🖥️ モニタープラン</span></td>
-          <td><span class="task-text">宿泊体験のフィードバックをもらう代わりに特別料金で提供</span><div class="task-detail">ターゲット：ブロガー・インフルエンサー・旅行好きフォロワー。SNS投稿・レビュー記入を条件に。割引率・条件の設計が必要。</div></td>
-          <td><span class="status-badge status-todo">要対応</span></td>
+          <td><span class="task-text">宿泊体験のフィードバックをもらう代わりに特別料金で提供</span><div class="task-detail">ターゲット：友人。フィードバック・レビュー記入を条件に特別料金で提供。</div></td>
+          <td><span class="status-badge status-done">✓ 公開済み</span></td>
         </tr>
         <tr>
           <td><span class="priority-badge pri-2">②</span></td>
@@ -297,7 +297,7 @@
         <tr>
           <td><span class="priority-badge pri-3">③</span></td>
           <td><span class="task-text">箱根の帰りに小田原に泊まる理由</span></td>
-          <td><span class="task-text">「箱根 宿泊」からの流入・箱根旅行者へのリーチ</span><div class="task-detail">箱根観光後に小田原泊という行動パターンを訴求。</div></td>
+          <td><span class="task-text">「箱根 宿泊」からの流入・箱根旅行者へのリーチ</span><div class="task-detail">箱根観光後に小田原泊というパターンを訴求。</div></td>
           <td><span class="status-badge status-todo">要対応</span></td>
         </tr>
         <tr>
@@ -337,7 +337,7 @@
           <td><span class="priority-badge pri-1">①</span></td>
           <td><span class="property-tag tag-house">house</span> <span class="property-tag tag-nook">nook</span></td>
           <td><span class="property-tag tag-booking">Booking.com</span></td>
-          <td><span class="task-text">Early Booker Deal 設定（先の予約を増やす）</span><div class="task-detail">30日前予約-10%、60日前-15%。5/9〜7/19対象。</div></td>
+          <td><span class="task-text">Early Booker Deal 設定（先の予約を増やす）</span><div class="task-detail">30日前予約-10%・60日前-15%。5/9〜7/19対象。</div></td>
           <td><span class="status-badge status-todo">要対応</span></td>
         </tr>
         <tr class="urgent-row">
@@ -456,6 +456,7 @@
     <table class="task-table">
       <thead><tr><th>カテゴリ</th><th>物件</th><th>タスク</th><th>内容</th><th>ステータス</th></tr></thead>
       <tbody>
+        <tr class="new-row"><td><span class="property-tag tag-ops">リスティング</span></td><td><span class="property-tag tag-hanare">hanare</span> <span class="property-tag tag-halo">HALO</span></td><td><span class="task-text">キャンセルポリシーの見直し</span></td><td><span class="task-detail">Booking.com上位表示のため、キャンセルポリシーを最適化。柔軟なポリシーに変更することで露出アップを狙う。</span></td><td><span class="status-badge status-todo">要対応</span></td></tr>
         <tr><td><span class="property-tag tag-ops">直予約</span></td><td><span class="property-tag tag-halo">HALO</span></td><td><span class="task-text">直予約比率 0.0% 改善</span></td><td><span class="task-detail">チェックイン時に再予約QRカードを渡す運用導入</span></td><td><span class="status-badge status-todo">要対応</span></td></tr>
         <tr><td><span class="property-tag tag-ops">財務</span></td><td><span class="property-tag tag-all">全物件</span></td><td><span class="task-text">MoneyForwardデータ更新</span></td><td><span class="task-detail">最終取得 2026/4/23。月初に定期更新が必要</span></td><td><span class="status-badge status-pending">定期</span></td></tr>
       </tbody>
@@ -483,6 +484,7 @@
       <thead><tr><th>物件</th><th>タスク</th><th>内容</th><th>ステータス</th></tr></thead>
       <tbody>
         <tr><td><span class="property-tag tag-all">全施設</span></td><td><span class="task-text">Beds24予約サイト テコ入れ</span></td><td><span class="task-detail">写真・説明文・料金設定・予約フロー全般を点検</span></td><td><span class="status-badge status-todo">要対応</span></td></tr>
+        <tr class="new-row"><td><span class="property-tag tag-all">全施設</span></td><td><span class="task-text">Beds24 開放期間を1年先まで拡張</span></td><td><span class="task-detail">Booking.com上位表示のため、先1年分の空き状況を公開する。現状の開放期間を確認・延長。</span></td><td><span class="status-badge status-todo">要対応</span></td></tr>
       </tbody>
     </table>
   </div>
@@ -547,7 +549,6 @@
   const dateStr = now.toLocaleDateString('ja-JP', { year:'numeric', month:'long', day:'numeric', weekday:'short' });
   document.getElementById('today-date').innerHTML = `最終更新<br>${dateStr}`;
 
-  // タブ名マップ
   const TAB_LABELS = {
     'kansan':    '🌿 閑散期対策',
     'promo':     '🎯 OTAプロモ',
@@ -561,26 +562,19 @@
     const tbody = document.getElementById('done-tbody');
     tbody.innerHTML = '';
     let count = 0;
-
     document.querySelectorAll('.tab-content:not(#tab-done)').forEach(tabEl => {
       const tabId = tabEl.id.replace('tab-', '');
       const tabLabel = TAB_LABELS[tabId] || tabId;
-
       tabEl.querySelectorAll('tr').forEach(row => {
         const doneCell = row.querySelector('.status-done');
         if (!doneCell) return;
-
-        const propTags = Array.from(row.querySelectorAll('.property-tag'))
-          .map(t => t.outerHTML).join(' ');
-
+        const propTags = Array.from(row.querySelectorAll('.property-tag')).map(t => t.outerHTML).join(' ');
         const taskText = row.querySelector('.task-text');
         const taskName = taskText ? taskText.textContent.trim() : '—';
         const taskDetail = row.querySelector('.task-detail');
         const detailHtml = taskDetail ? `<div class="task-detail">${taskDetail.innerHTML}</div>` : '';
-
         const dateCell = row.querySelector('.date-cell');
         const dateText = dateCell ? dateCell.textContent.trim() : '—';
-
         const tr = document.createElement('tr');
         tr.className = 'new-row';
         tr.innerHTML = `
@@ -588,13 +582,11 @@
           <td>${propTags || '<span class="property-tag tag-all">—</span>'}</td>
           <td><span class="task-text">${taskName}</span>${detailHtml}</td>
           <td class="date-cell">${dateText}</td>
-          <td>${doneCell.outerHTML}</td>
-        `;
+          <td>${doneCell.outerHTML}</td>`;
         tbody.appendChild(tr);
         count++;
       });
     });
-
     document.getElementById('done-empty').style.display = count === 0 ? 'block' : 'none';
   }
 
