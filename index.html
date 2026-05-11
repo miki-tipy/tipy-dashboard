@@ -190,6 +190,30 @@
   <button class="tab-btn" onclick="switchTab('listing',this)">🏠 リスティング</button>
   <button class="tab-btn" onclick="switchTab('note',this)">✍️ note</button>
   <button class="tab-btn" onclick="switchTab('done',this)">✅ 完了済み</button>
+</div>="header">
+  <div>
+    <h1>🏨 Tipy Records Inn</h1>
+    <div class="subtitle">施策管理ダッシュボード</div>
+  </div>
+  <div class="date" id="today-date"></div>
+</div>
+
+<div class="summary-bar">
+  <div class="summary-item"><div class="summary-dot dot-done"></div><span class="summary-label">完了</span><span class="summary-count" id="count-done">0</span></div>
+  <div class="summary-item"><div class="summary-dot dot-urgent"></div><span class="summary-label">緊急</span><span class="summary-count" id="count-urgent">0</span></div>
+  <div class="summary-item"><div class="summary-dot dot-todo"></div><span class="summary-label">要対応</span><span class="summary-count" id="count-todo">0</span></div>
+  <div class="summary-item"><div class="summary-dot dot-wip"></div><span class="summary-label">対応中</span><span class="summary-count" id="count-wip">0</span></div>
+  <div class="summary-item"><div class="summary-dot dot-pending"></div><span class="summary-label">検討中</span><span class="summary-count" id="count-pending">0</span></div>
+</div>
+
+<div class="tab-nav">
+  <button class="tab-btn active" onclick="switchTab('kansan',this)">🌿 閑散期対策</button>
+  <button class="tab-btn" onclick="switchTab('promo',this)">🎯 OTAプロモ</button>
+  <button class="tab-btn" onclick="switchTab('pricelabs',this)">📊 PriceLabs</button>
+  <button class="tab-btn" onclick="switchTab('ops',this)">⚙️ 運営改善</button>
+  <button class="tab-btn" onclick="switchTab('listing',this)">🏠 リスティング</button>
+  <button class="tab-btn" onclick="switchTab('note',this)">✍️ note</button>
+  <button class="tab-btn" onclick="switchTab('done',this)">✅ 完了済み</button>
 </div>
 
 <!-- ========== TAB: 閑散期対策 ========== -->
@@ -297,7 +321,7 @@
         <tr>
           <td><span class="priority-badge pri-3">③</span></td>
           <td><span class="task-text">箱根の帰りに小田原に泊まる理由</span></td>
-          <td><span class="task-text">「箱根 宿泊」からの流入・箱根旅行者へのリーチ</span><div class="task-detail">箱根観光後に小田原泊というパターンを訴求。</div></td>
+          <td><span class="task-text">「箱根 宿泊」からの流入・箱根旅行者へのリーチ</span><div class="task-detail">箱根観光後に小田原泊という行動パターンを訴求。</div></td>
           <td><span class="status-badge status-todo">要対応</span></td>
         </tr>
         <tr>
@@ -337,7 +361,7 @@
           <td><span class="priority-badge pri-1">①</span></td>
           <td><span class="property-tag tag-house">house</span> <span class="property-tag tag-nook">nook</span></td>
           <td><span class="property-tag tag-booking">Booking.com</span></td>
-          <td><span class="task-text">Early Booker Deal 設定（先の予約を増やす）</span><div class="task-detail">30日前予約-10%・60日前-15%。5/9〜7/19対象。</div></td>
+          <td><span class="task-text">Early Booker Deal 設定（先の予約を増やす）</span><div class="task-detail">30日前予約-10%、60日前-15%。5/9〜7/19対象。</div></td>
           <td><span class="status-badge status-todo">要対応</span></td>
         </tr>
         <tr class="urgent-row">
@@ -418,6 +442,7 @@
         <tr class="new-row"><td class="date-cell">2026/4/26</td><td><span class="property-tag tag-halo">HALO</span></td><td><span class="task-text">Min Price 修正</span></td><td><span class="task-text">ツイン ¥10,500→<strong>¥12,000</strong>（損益分岐点¥11,842割れを修正）</span></td><td><span class="status-badge status-done">✓ 完了</span></td></tr>
         <tr><td class="date-cell">2026/4/25</td><td><span class="property-tag tag-hanare">hanare</span></td><td><span class="task-text">Last Minute割引 強化</span></td><td><span class="task-text">グループ22% → 個別35% Gradual（7日以内）</span></td><td><span class="status-badge status-done">✓ 完了</span></td></tr>
         <tr><td class="date-cell">2026/4/25</td><td><span class="property-tag tag-halo">HALO</span></td><td><span class="task-text">Last Minute割引 強化</span></td><td><span class="task-text">25% → 35% Gradual（7日以内）</span></td><td><span class="status-badge status-done">✓ 完了</span></td></tr>
+        <tr class="new-row"><td class="date-cell">2026/5/11</td><td><span class="property-tag tag-house">house</span></td><td><span class="task-text">Far Out Premium 無効化</span></td><td><span class="task-text">No Far Out Prices に変更（グループ設定を上書き）</span><div class="task-detail">60日以上先に+20%割増がかかっていたためリードタイムが伸びにくかった。house単体でNo Far Out Pricesを設定し早期予約を促進。</div></td><td><span class="status-badge status-done">✓ 完了</span></td></tr>
       </tbody>
     </table>
   </div>
@@ -549,6 +574,7 @@
   const dateStr = now.toLocaleDateString('ja-JP', { year:'numeric', month:'long', day:'numeric', weekday:'short' });
   document.getElementById('today-date').innerHTML = `最終更新<br>${dateStr}`;
 
+  // タブ名マップ
   const TAB_LABELS = {
     'kansan':    '🌿 閑散期対策',
     'promo':     '🎯 OTAプロモ',
@@ -562,19 +588,26 @@
     const tbody = document.getElementById('done-tbody');
     tbody.innerHTML = '';
     let count = 0;
+
     document.querySelectorAll('.tab-content:not(#tab-done)').forEach(tabEl => {
       const tabId = tabEl.id.replace('tab-', '');
       const tabLabel = TAB_LABELS[tabId] || tabId;
+
       tabEl.querySelectorAll('tr').forEach(row => {
         const doneCell = row.querySelector('.status-done');
         if (!doneCell) return;
-        const propTags = Array.from(row.querySelectorAll('.property-tag')).map(t => t.outerHTML).join(' ');
+
+        const propTags = Array.from(row.querySelectorAll('.property-tag'))
+          .map(t => t.outerHTML).join(' ');
+
         const taskText = row.querySelector('.task-text');
         const taskName = taskText ? taskText.textContent.trim() : '—';
         const taskDetail = row.querySelector('.task-detail');
         const detailHtml = taskDetail ? `<div class="task-detail">${taskDetail.innerHTML}</div>` : '';
+
         const dateCell = row.querySelector('.date-cell');
         const dateText = dateCell ? dateCell.textContent.trim() : '—';
+
         const tr = document.createElement('tr');
         tr.className = 'new-row';
         tr.innerHTML = `
@@ -582,11 +615,13 @@
           <td>${propTags || '<span class="property-tag tag-all">—</span>'}</td>
           <td><span class="task-text">${taskName}</span>${detailHtml}</td>
           <td class="date-cell">${dateText}</td>
-          <td>${doneCell.outerHTML}</td>`;
+          <td>${doneCell.outerHTML}</td>
+        `;
         tbody.appendChild(tr);
         count++;
       });
     });
+
     document.getElementById('done-empty').style.display = count === 0 ? 'block' : 'none';
   }
 
