@@ -8,172 +8,65 @@
   :root { color-scheme: light; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: 'Hiragino Sans', 'Meiryo', sans-serif; background: #f5f5f0; color: #1a1a1a; font-size: 14px; }
-
-  .header {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    color: white; padding: 20px 24px;
-    display: flex; justify-content: space-between; align-items: center;
-  }
+  .header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; }
   .header h1 { font-size: 18px; font-weight: 700; letter-spacing: 0.5px; }
   .header .subtitle { font-size: 12px; color: #aaa; margin-top: 2px; }
   .header .date { font-size: 12px; color: #ccc; text-align: right; }
-
-  .summary-bar {
-    background: white; padding: 12px 24px;
-    display: flex; gap: 20px; border-bottom: 1px solid #e5e5e5; flex-wrap: wrap;
-  }
+  .summary-bar { background: white; padding: 12px 24px; display: flex; gap: 20px; border-bottom: 1px solid #e5e5e5; flex-wrap: wrap; }
   .summary-item { display: flex; align-items: center; gap: 6px; }
   .summary-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
-  .dot-done { background: #22c55e; }
-  .dot-urgent { background: #ef4444; }
-  .dot-todo { background: #f59e0b; }
-  .dot-wip { background: #3b82f6; }
-  .dot-pending { background: #e5e7eb; border: 1px solid #ccc; }
-  .summary-label { font-size: 12px; color: #666; }
-  .summary-count { font-size: 13px; font-weight: 700; color: #1a1a1a; }
-
-  .tab-nav {
-    background: white; border-bottom: 2px solid #e5e5e5;
-    padding: 0 24px; display: flex; gap: 0; overflow-x: auto;
-  }
-  .tab-btn {
-    padding: 12px 14px; font-size: 12px; font-weight: 600; color: #888;
-    border: none; background: none; cursor: pointer;
-    border-bottom: 2px solid transparent; margin-bottom: -2px;
-    white-space: nowrap; transition: color 0.2s;
-  }
-  .tab-btn.active { color: #1a1a2e; border-bottom-color: #1a1a2e; }
-  .tab-btn:hover:not(.active) { color: #333; }
-
-  .tab-content { display: none; }
-  .tab-content.active { display: block; }
+  .dot-done { background: #22c55e; } .dot-urgent { background: #ef4444; } .dot-todo { background: #f59e0b; } .dot-wip { background: #3b82f6; } .dot-pending { background: #e5e7eb; border: 1px solid #ccc; }
+  .summary-label { font-size: 12px; color: #666; } .summary-count { font-size: 13px; font-weight: 700; color: #1a1a1a; }
+  .tab-nav { background: white; border-bottom: 2px solid #e5e5e5; padding: 0 24px; display: flex; gap: 0; overflow-x: auto; }
+  .tab-btn { padding: 12px 14px; font-size: 12px; font-weight: 600; color: #888; border: none; background: none; cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -2px; white-space: nowrap; transition: color 0.2s; }
+  .tab-btn.active { color: #1a1a2e; border-bottom-color: #1a1a2e; } .tab-btn:hover:not(.active) { color: #333; }
+  .tab-content { display: none; } .tab-content.active { display: block; }
   .container { padding: 20px 24px; max-width: 1000px; }
-
   .section { margin-bottom: 24px; }
-  .section-title {
-    font-size: 13px; font-weight: 700; color: #666;
-    text-transform: uppercase; letter-spacing: 1px;
-    margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
-  }
+  .section-title { font-size: 13px; font-weight: 700; color: #666; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
   .section-title::after { content: ''; flex: 1; height: 1px; background: #e5e5e5; }
-
-  .banner {
-    border-radius: 8px; padding: 14px 16px; margin-bottom: 20px;
-    display: flex; align-items: flex-start; gap: 12px;
-  }
+  .banner { border-radius: 8px; padding: 14px 16px; margin-bottom: 20px; display: flex; align-items: flex-start; gap: 12px; }
   .banner-urgent { background: linear-gradient(135deg,#fef2f2,#fff5f5); border: 1px solid #fca5a5; border-left: 4px solid #ef4444; }
-  .banner-blue   { background: linear-gradient(135deg,#eff6ff,#f0f9ff); border: 1px solid #93c5fd; border-left: 4px solid #3b82f6; }
   .banner-green  { background: linear-gradient(135deg,#f0fdf4,#f0fdf4); border: 1px solid #86efac; border-left: 4px solid #22c55e; }
   .banner-amber  { background: linear-gradient(135deg,#fffbeb,#fefce8); border: 1px solid #fde68a; border-left: 4px solid #f59e0b; }
   .banner .icon { font-size: 20px; flex-shrink: 0; }
   .banner .title { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
-  .banner-urgent .title { color: #991b1b; }
-  .banner-blue   .title { color: #1d4ed8; }
-  .banner-green  .title { color: #166534; }
-  .banner-amber  .title { color: #92400e; }
+  .banner-urgent .title { color: #991b1b; } .banner-green .title { color: #166534; } .banner-amber .title { color: #92400e; }
   .banner .body { font-size: 12px; line-height: 1.6; }
-  .banner-urgent .body { color: #7f1d1d; }
-  .banner-blue   .body { color: #1e40af; }
-  .banner-green  .body { color: #166534; }
-  .banner-amber  .body { color: #78350f; }
-
-  .task-table {
-    width: 100%; border-collapse: collapse; background: white;
-    border-radius: 10px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.07);
-  }
-  .task-table th {
-    background: #f8f8f8; padding: 10px 14px; text-align: left;
-    font-size: 11px; color: #888; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid #efefef;
-  }
+  .banner-urgent .body { color: #7f1d1d; } .banner-green .body { color: #166534; } .banner-amber .body { color: #78350f; }
+  .task-table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
+  .task-table th { background: #f8f8f8; padding: 10px 14px; text-align: left; font-size: 11px; color: #888; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid #efefef; }
   .task-table td { padding: 12px 14px; border-bottom: 1px solid #f0f0f0; vertical-align: middle; }
-  .task-table tr:last-child td { border-bottom: none; }
-  .task-table tr:hover td { background: #fafafa; }
-  .task-table tr.urgent-row td { background: #fff8f8; }
-  .task-table tr.urgent-row:hover td { background: #fff0f0; }
-  .task-table tr.new-row td { background: #f0fdf4; }
-  .task-table tr.new-row:hover td { background: #dcfce7; }
-
-  .property-tag {
-    display: inline-block; padding: 2px 8px; border-radius: 12px;
-    font-size: 11px; font-weight: 600; white-space: nowrap;
-  }
-  .tag-hanare  { background: #fff3cd; color: #92620a; }
-  .tag-halo    { background: #e8d5f5; color: #6b21a8; }
-  .tag-house   { background: #fde8e8; color: #991b1b; }
-  .tag-room    { background: #dbeafe; color: #1d4ed8; }
-  .tag-photon  { background: #dcfce7; color: #166534; }
-  .tag-nook    { background: #ffe4cc; color: #c2410c; }
-  .tag-all     { background: #f1f5f9; color: #475569; }
-  .tag-beds    { background: #e0f2fe; color: #0369a1; }
-  .tag-note    { background: #fdf4ff; color: #7e22ce; }
-  .tag-airbnb  { background: #ffe4e6; color: #be123c; }
-  .tag-booking { background: #dbeafe; color: #1d4ed8; }
-  .tag-ops     { background: #f0fdf4; color: #166534; }
-  .tag-chillnn { background: #fdf4ff; color: #7e22ce; }
-  .tag-kansan  { background: #fff7ed; color: #9a3412; }
-
-  .status-badge {
-    display: inline-flex; align-items: center; gap: 5px;
-    padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; white-space: nowrap;
-  }
-  .status-done    { background: #dcfce7; color: #166534; }
-  .status-urgent  { background: #fee2e2; color: #991b1b; }
-  .status-todo    { background: #fef9c3; color: #854d0e; }
-  .status-pending { background: #f1f5f9; color: #64748b; }
-  .status-wip     { background: #dbeafe; color: #1d4ed8; }
-  .status-open    { background: #fff7ed; color: #9a3412; }
-
-  .task-text   { font-size: 13px; line-height: 1.5; }
-  .task-detail { font-size: 11px; color: #888; margin-top: 2px; }
-  .date-cell   { font-size: 11px; color: #999; white-space: nowrap; }
-
-  .priority-badge {
-    display: inline-flex; align-items: center; justify-content: center;
-    width: 22px; height: 22px; border-radius: 50%; font-size: 12px; font-weight: 800;
-  }
-  .pri-1 { background: #fee2e2; color: #991b1b; }
-  .pri-2 { background: #fef9c3; color: #854d0e; }
-  .pri-3 { background: #eff6ff; color: #1d4ed8; }
-  .pri-4 { background: #f1f5f9; color: #64748b; }
-
-  .progress-section {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px;
-  }
-  .progress-card {
-    background: white; border-radius: 10px; padding: 16px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
-  }
+  .task-table tr:last-child td { border-bottom: none; } .task-table tr:hover td { background: #fafafa; }
+  .task-table tr.urgent-row td { background: #fff8f8; } .task-table tr.urgent-row:hover td { background: #fff0f0; }
+  .task-table tr.new-row td { background: #f0fdf4; } .task-table tr.new-row:hover td { background: #dcfce7; }
+  .property-tag { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; white-space: nowrap; }
+  .tag-hanare { background: #fff3cd; color: #92620a; } .tag-halo { background: #e8d5f5; color: #6b21a8; } .tag-house { background: #fde8e8; color: #991b1b; }
+  .tag-room { background: #dbeafe; color: #1d4ed8; } .tag-photon { background: #dcfce7; color: #166534; } .tag-nook { background: #ffe4cc; color: #c2410c; }
+  .tag-all { background: #f1f5f9; color: #475569; } .tag-beds { background: #e0f2fe; color: #0369a1; } .tag-note { background: #fdf4ff; color: #7e22ce; }
+  .tag-booking { background: #dbeafe; color: #1d4ed8; } .tag-ops { background: #f0fdf4; color: #166534; } .tag-chillnn { background: #fdf4ff; color: #7e22ce; }
+  .status-badge { display: inline-flex; align-items: center; gap: 5px; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; white-space: nowrap; }
+  .status-done { background: #dcfce7; color: #166534; } .status-urgent { background: #fee2e2; color: #991b1b; }
+  .status-todo { background: #fef9c3; color: #854d0e; } .status-pending { background: #f1f5f9; color: #64748b; } .status-wip { background: #dbeafe; color: #1d4ed8; }
+  .task-text { font-size: 13px; line-height: 1.5; } .task-detail { font-size: 11px; color: #888; margin-top: 2px; } .date-cell { font-size: 11px; color: #999; white-space: nowrap; }
+  .priority-badge { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; font-size: 12px; font-weight: 800; }
+  .pri-1 { background: #fee2e2; color: #991b1b; } .pri-2 { background: #fef9c3; color: #854d0e; } .pri-3 { background: #eff6ff; color: #1d4ed8; } .pri-4 { background: #f1f5f9; color: #64748b; }
+  .progress-section { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px; }
+  .progress-card { background: white; border-radius: 10px; padding: 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
   .progress-card .prop-name { font-size: 13px; font-weight: 700; margin-bottom: 4px; display: flex; justify-content: space-between; }
-  .progress-bar-bg   { height: 6px; background: #f0f0f0; border-radius: 3px; margin: 8px 0; }
-  .progress-bar-fill { height: 6px; border-radius: 3px; }
-  .fill-good { background: #22c55e; }
-  .fill-mid  { background: #f59e0b; }
-  .fill-low  { background: #ef4444; }
+  .progress-bar-bg { height: 6px; background: #f0f0f0; border-radius: 3px; margin: 8px 0; } .progress-bar-fill { height: 6px; border-radius: 3px; }
+  .fill-good { background: #22c55e; } .fill-mid { background: #f59e0b; } .fill-low { background: #ef4444; }
   .progress-tasks { font-size: 11px; color: #888; }
-
-  .note-box    { background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; padding: 12px 16px; font-size: 12px; color: #78350f; margin-top: 8px; }
-  .info-box    { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 12px 16px; font-size: 12px; color: #1e40af; margin-top: 8px; }
-  .success-box { background: #f0fdf4; border: 1px solid #86efac; border-radius: 8px; padding: 12px 16px; font-size: 12px; color: #166534; margin-top: 8px; }
-  .warn-box    { background: #fff7ed; border: 1px solid #fed7aa; border-radius: 8px; padding: 12px 16px; font-size: 12px; color: #9a3412; margin-top: 8px; }
-
-  @media (max-width: 600px) {
-    .progress-section { grid-template-columns: 1fr; }
-    .container { padding: 12px 16px; }
-    .tab-btn { padding: 10px 10px; font-size: 11px; }
-  }
+  .info-box { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 12px 16px; font-size: 12px; color: #1e40af; margin-top: 8px; }
+  .warn-box { background: #fff7ed; border: 1px solid #fed7aa; border-radius: 8px; padding: 12px 16px; font-size: 12px; color: #9a3412; margin-top: 8px; }
+  @media (max-width: 600px) { .progress-section { grid-template-columns: 1fr; } .container { padding: 12px 16px; } .tab-btn { padding: 10px 10px; font-size: 11px; } }
 </style>
 </head>
 <body>
-
 <div class="header">
-  <div>
-    <h1>🏨 Tipy Records Inn</h1>
-    <div class="subtitle">施策管理ダッシュボード</div>
-  </div>
+  <div><h1>🏨 Tipy Records Inn</h1><div class="subtitle">施策管理ダッシュボード</div></div>
   <div class="date" id="today-date"></div>
 </div>
-
 <div class="summary-bar">
   <div class="summary-item"><div class="summary-dot dot-done"></div><span class="summary-label">完了</span><span class="summary-count" id="count-done">0</span></div>
   <div class="summary-item"><div class="summary-dot dot-urgent"></div><span class="summary-label">緊急</span><span class="summary-count" id="count-urgent">0</span></div>
@@ -181,7 +74,6 @@
   <div class="summary-item"><div class="summary-dot dot-wip"></div><span class="summary-label">対応中</span><span class="summary-count" id="count-wip">0</span></div>
   <div class="summary-item"><div class="summary-dot dot-pending"></div><span class="summary-label">検討中</span><span class="summary-count" id="count-pending">0</span></div>
 </div>
-
 <div class="tab-nav">
   <button class="tab-btn active" onclick="switchTab('kansan',this)">🌿 閑散期対策</button>
   <button class="tab-btn" onclick="switchTab('promo',this)">🎯 OTAプロモ</button>
@@ -191,189 +83,55 @@
   <button class="tab-btn" onclick="switchTab('note',this)">✍️ note</button>
   <button class="tab-btn" onclick="switchTab('done',this)">✅ 完了済み</button>
 </div>
-
-<!-- ========== TAB: 閑散期対策 ========== -->
-<div id="tab-kansan" class="tab-content active">
-<div class="container">
-
-  <div class="banner banner-amber">
-    <div class="icon">🌿</div>
-    <div>
-      <div class="title">閑散期（5/9〜7/19）対策ロードマップ</div>
-      <div class="body">価格設定の整備（4/26完了）→ OTAプロモ → 特別プラン企画 → note集客 の順で進める。</div>
-    </div>
+<!-- TAB: 閑散期対策 -->
+<div id="tab-kansan" class="tab-content active"><div class="container">
+  <div class="banner banner-amber"><div class="icon">🌿</div><div><div class="title">閑散期（5/9〜7/19）対策ロードマップ</div><div class="body">価格設定の整備（4/26完了）→ OTAプロモ → 特別プラン企画 → note集客 の順で進める。</div></div></div>
+  <div class="section"><div class="section-title">💰 価格施策（優先順位順）</div>
+    <table class="task-table"><thead><tr><th>優先度</th><th>物件</th><th>施策</th><th>内容・方法</th><th>ステータス</th></tr></thead><tbody>
+      <tr><td><span class="priority-badge pri-1">①</span></td><td><span class="property-tag tag-house">house</span> <span class="property-tag tag-nook">nook</span></td><td><span class="task-text">Early Bird割引</span></td><td><span class="task-text">Booking.com Early Booker Deal 設定</span><div class="task-detail">house平均47日・nook平均18日 → 60日前50%・30日前65%。AirbnbはPriceLabs連携のため不可。</div></td><td><span class="status-badge status-todo">要対応</span></td></tr>
+      <tr><td><span class="priority-badge pri-2">②</span></td><td><span class="property-tag tag-hanare">hanare</span></td><td><span class="task-text">連泊・長期割引</span></td><td><span class="task-text">Booking.com 連泊割引設定（3泊-15%、5泊-20%）</span><div class="task-detail">閑散期の平日を連続で埋める。清掃コスト圧縮にもつながる。</div></td><td><span class="status-badge status-todo">要対応</span></td></tr>
+      <tr><td><span class="priority-badge pri-3">③</span></td><td><span class="property-tag tag-photon">photon</span> <span class="property-tag tag-halo">HALO</span></td><td><span class="task-text">平日値下げ（直前割）</span></td><td><span class="task-text">Booking.com Flash Deal / CHILLNN直前割 / Beds24 Last-Minute</span><div class="task-detail">5/9〜7/19対象・7日前以内 15〜20%オフ。PriceLabs Last Minute（35%）は設定済み。</div></td><td><span class="status-badge status-todo">要対応</span></td></tr>
+    </tbody></table>
+    <div class="warn-box">⚠️ AirbnbはPriceLabs連携中のため割引機能設定不可。Booking.com / CHILLNN / Beds24で代替する。</div>
   </div>
-
-  <div class="section">
-    <div class="section-title">💰 価格施策（優先順位順）</div>
-    <table class="task-table">
-      <thead>
-        <tr><th>優先度</th><th>物件</th><th>施策</th><th>内容・方法</th><th>ステータス</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><span class="priority-badge pri-1">①</span></td>
-          <td><span class="property-tag tag-house">house</span> <span class="property-tag tag-nook">nook</span></td>
-          <td><span class="task-text">Early Bird割引（先の予約を増やす）</span></td>
-          <td><span class="task-text">Booking.com Early Booker Deal 設定</span><div class="task-detail">リードタイム：house平均47日、nook平均18日 → 先埋め目標：60日前50%・30日前65%。AirbnbはPriceLabs連携のため不可。Booking.comで設定。</div></td>
-          <td><span class="status-badge status-todo">要対応</span></td>
-        </tr>
-        <tr>
-          <td><span class="priority-badge pri-2">②</span></td>
-          <td><span class="property-tag tag-hanare">hanare</span></td>
-          <td><span class="task-text">連泊・長期割引</span></td>
-          <td><span class="task-text">Booking.com 連泊割引設定（3泊-15%、5泊-20%）</span><div class="task-detail">閑散期の平日を連続で埋める。清掃コスト圧縮にもつながる。AirbnbはPriceLabs連携のため割引設定不可。</div></td>
-          <td><span class="status-badge status-todo">要対応</span></td>
-        </tr>
-        <tr>
-          <td><span class="priority-badge pri-3">③</span></td>
-          <td><span class="property-tag tag-photon">photon</span> <span class="property-tag tag-halo">HALO</span></td>
-          <td><span class="task-text">平日値下げ（直前割）</span></td>
-          <td><span class="task-text">Booking.com Flash Deal / CHILLNN直前割クーポン / Beds24 Last-Minute</span><div class="task-detail">5/9〜7/19対象・7日前以内 15〜20%オフ。PriceLabs Last Minute（35%）は設定済み。OTA側でも重ねてプロモ設定。</div></td>
-          <td><span class="status-badge status-todo">要対応</span></td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="warn-box">⚠️ AirbnbはPriceLabs連携中のため、Airbnb側の割引機能（Early Bird・週割・期間限定プロモ）は設定不可。Booking.com / CHILLNN / Beds24で代替する。</div>
+  <div class="section"><div class="section-title">🎪 特別プラン企画</div>
+    <table class="task-table"><thead><tr><th>優先度</th><th>プラン名</th><th>内容</th><th>ステータス</th></tr></thead><tbody>
+      <tr><td><span class="priority-badge pri-1">①</span></td><td><span class="task-text">🖥️ モニタープラン</span></td><td><span class="task-text">フィードバックをもらう代わりに特別料金で提供</span></td><td><span class="status-badge status-done">✓ 公開済み</span></td></tr>
+      <tr><td><span class="priority-badge pri-2">②</span></td><td><span class="task-text">🏠 ADDress開放</span></td><td><span class="task-text">ADDress（多拠点生活サービス）への物件開放</span><div class="task-detail">閑散期の安定稼働確保。house・nook等が候補。</div></td><td><span class="status-badge status-todo">要対応</span></td></tr>
+      <tr><td><span class="priority-badge pri-3">③</span></td><td><span class="task-text">🌱 お試し移住プラン</span></td><td><span class="task-text">小田原への移住検討者向け長期滞在プラン</span></td><td><span class="status-badge status-done">✓ 公開済み</span></td></tr>
+      <tr><td><span class="priority-badge pri-4">④</span></td><td><span class="task-text">🎒 ひとり旅プラン</span></td><td><span class="task-text">ひとり旅需要を取り込む専用プラン＋note記事</span><div class="task-detail">割引率検討（5〜10%程度）。photon・hanare・HALOが候補。</div></td><td><span class="status-badge status-todo">要対応</span></td></tr>
+    </tbody></table>
   </div>
-
-  <div class="section">
-    <div class="section-title">🎪 特別プラン企画</div>
-    <table class="task-table">
-      <thead>
-        <tr><th>優先度</th><th>プラン名</th><th>内容</th><th>ステータス</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><span class="priority-badge pri-1">①</span></td>
-          <td><span class="task-text">🖥️ モニタープラン</span></td>
-          <td><span class="task-text">宿泊体験のフィードバックをもらう代わりに特別料金で提供</span><div class="task-detail">ターゲット：友人。フィードバック・レビュー記入を条件に特別料金で提供。</div></td>
-          <td><span class="status-badge status-done">✓ 公開済み</span></td>
-        </tr>
-        <tr>
-          <td><span class="priority-badge pri-2">②</span></td>
-          <td><span class="task-text">🏠 ADDress開放</span></td>
-          <td><span class="task-text">ADDress（多拠点生活サービス）への物件開放</span><div class="task-detail">閑散期の安定稼働確保。登録・審査フローを確認する。house・nook等、長期滞在向け物件が候補。</div></td>
-          <td><span class="status-badge status-todo">要対応</span></td>
-        </tr>
-        <tr>
-          <td><span class="priority-badge pri-3">③</span></td>
-          <td><span class="task-text">🌱 お試し移住プラン</span></td>
-          <td><span class="task-text">小田原への移住検討者向け長期滞在プラン</span><div class="task-detail">公開済み ✅。引き続き露出・PRを強化する。</div></td>
-          <td><span class="status-badge status-done">✓ 公開済み</span></td>
-        </tr>
-        <tr>
-          <td><span class="priority-badge pri-4">④</span></td>
-          <td><span class="task-text">🎒 ひとり旅プラン</span></td>
-          <td><span class="task-text">ひとり旅需要を取り込む専用プラン＋note記事</span><div class="task-detail">割引率検討（5〜10%程度）。note記事「ひとりで小田原に来てよかった話」等でSEO集客。photon・hanare・HALOが候補。</div></td>
-          <td><span class="status-badge status-todo">要対応</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="section">
-    <div class="section-title">📝 note記事による検索集客</div>
-    <table class="task-table">
-      <thead>
-        <tr><th>優先度</th><th>記事タイトル案</th><th>狙いとターゲット</th><th>ステータス</th></tr>
-      </thead>
-      <tbody>
-        <tr><td><span class="priority-badge pri-1">①</span></td><td><span class="task-text">ひとりで小田原に来てよかった話｜静かな港町で過ごす一泊</span></td><td><span class="task-text">「ひとり旅 小田原」検索流入・閑散期の平日単泊需要</span><div class="task-detail">ひとり旅プランと連動。photon・hanare・HALOへの導線を組み込む。</div></td><td><span class="status-badge status-todo">要対応</span></td></tr>
-        <tr><td><span class="priority-badge pri-2">②</span></td><td><span class="task-text">小田原観光のおすすめモデルコース｜地元ゲストハウスが教えるリアルな過ごし方</span></td><td><span class="task-text">「小田原 観光 モデルコース」検索流入・インバウンド含む観光客</span><div class="task-detail">地元目線のコースで差別化。英語版も視野に。</div></td><td><span class="status-badge status-todo">要対応</span></td></tr>
-        <tr><td><span class="priority-badge pri-3">③</span></td><td><span class="task-text">箱根の帰りに小田原に泊まる理由</span></td><td><span class="task-text">「箱根 宿泊」からの流入・箱根旅行者へのリーチ</span><div class="task-detail">箱根観光後に小田原泊という行動パターンを訴求。</div></td><td><span class="status-badge status-todo">要対応</span></td></tr>
-        <tr><td><span class="priority-badge pri-4">④</span></td><td><span class="task-text">Tipy records innってどんな宿？正直レビュー形式で全部教えます</span></td><td><span class="task-text">ブランド検索・ファン獲得・信頼構築</span><div class="task-detail">指名検索対策。既存ゲストのリピーター化にも有効。</div></td><td><span class="status-badge status-todo">要対応</span></td></tr>
-      </tbody>
-    </table>
+  <div class="section"><div class="section-title">📝 note記事による検索集客</div>
+    <table class="task-table"><thead><tr><th>優先度</th><th>記事タイトル案</th><th>狙いとターゲット</th><th>ステータス</th></tr></thead><tbody>
+      <tr><td><span class="priority-badge pri-1">①</span></td><td><span class="task-text">ひとりで小田原に来てよかった話｜静かな港町で過ごす一泊</span></td><td><span class="task-text">「ひとり旅 小田原」検索流入・閑散期の平日単泊需要</span></td><td><span class="status-badge status-todo">要対応</span></td></tr>
+      <tr><td><span class="priority-badge pri-2">②</span></td><td><span class="task-text">小田原観光のおすすめモデルコース｜地元ゲストハウスが教えるリアルな過ごし方</span></td><td><span class="task-text">「小田原 観光 モデルコース」検索流入</span></td><td><span class="status-badge status-todo">要対応</span></td></tr>
+      <tr><td><span class="priority-badge pri-3">③</span></td><td><span class="task-text">箱根の帰りに小田原に泊まる理由</span></td><td><span class="task-text">「箱根 宿泊」からの流入・箱根旅行者へのリーチ</span></td><td><span class="status-badge status-todo">要対応</span></td></tr>
+      <tr><td><span class="priority-badge pri-4">④</span></td><td><span class="task-text">Tipy records innってどんな宿？正直レビュー形式で全部教えます</span></td><td><span class="task-text">ブランド検索・ファン獲得・信頼構築</span></td><td><span class="status-badge status-todo">要対応</span></td></tr>
+    </tbody></table>
     <div class="info-box">💡 閑散期（5〜7月）は書く時間が取りやすい。記事は仕込みから流入まで1〜2ヶ月かかるので今書き始めると夏〜秋に効く。</div>
   </div>
-
-</div>
-</div>
-
-<!-- ========== TAB: OTAプロモーション ========== -->
-<div id="tab-promo" class="tab-content">
-<div class="container">
-
-  <div class="banner banner-urgent">
-    <div class="icon">🚨</div>
-    <div>
-      <div class="title">閑散期（5/9〜7/19）対策：Booking.com / CHILLNN / Beds24 設定が急務！</div>
-      <div class="body">AirbnbはPriceLabs連携のため割引設定不可。Booking.com・CHILLNN・Beds24に集中する。</div>
-    </div>
+</div></div>
+<!-- TAB: OTAプロモ -->
+<div id="tab-promo" class="tab-content"><div class="container">
+  <div class="banner banner-urgent"><div class="icon">🚨</div><div><div class="title">閑散期（5/9〜7/19）対策：Booking.com / CHILLNN / Beds24 設定が急務！</div><div class="body">AirbnbはPriceLabs連携のため割引設定不可。Booking.com・CHILLNN・Beds24に集中する。</div></div></div>
+  <div class="section"><div class="section-title">🔴 最優先：直前割（閑散期 5/9〜7/19）</div>
+    <table class="task-table"><thead><tr><th>優先度</th><th>物件</th><th>チャネル</th><th>施策内容</th><th>ステータス</th></tr></thead><tbody>
+      <tr class="urgent-row"><td><span class="priority-badge pri-1">①</span></td><td><span class="property-tag tag-house">house</span> <span class="property-tag tag-nook">nook</span></td><td><span class="property-tag tag-booking">Booking.com</span></td><td><span class="task-text">Early Booker Deal 設定</span><div class="task-detail">30日前-10%、60日前-15%。5/9〜7/19対象。</div></td><td><span class="status-badge status-todo">要対応</span></td></tr>
+      <tr class="urgent-row"><td><span class="priority-badge pri-2">②</span></td><td><span class="property-tag tag-halo">HALO</span></td><td><span class="property-tag tag-booking">Booking.com</span></td><td><span class="task-text">Flash Deal 設定（稼働最低・直前対策）</span><div class="task-detail">7日前以内 20%オフ。5/9〜7/19対象。</div></td><td><span class="status-badge status-todo">要対応</span></td></tr>
+      <tr class="urgent-row"><td><span class="priority-badge pri-2">②</span></td><td><span class="property-tag tag-photon">photon</span></td><td><span class="property-tag tag-booking">Booking.com</span></td><td><span class="task-text">Flash Deal 設定</span><div class="task-detail">7日前以内 15%オフ。5/9〜7/19対象。朝日・ゆうひ・ひなた。</div></td><td><span class="status-badge status-todo">要対応</span></td></tr>
+      <tr class="urgent-row"><td><span class="priority-badge pri-2">②</span></td><td><span class="property-tag tag-hanare">hanare</span></td><td><span class="property-tag tag-booking">Booking.com</span></td><td><span class="task-text">Flash Deal + 連泊割引設定</span><div class="task-detail">直前7日以内 15%オフ ＋ 3泊-15%・5泊-20%。全4室。</div></td><td><span class="status-badge status-todo">要対応</span></td></tr>
+      <tr><td><span class="priority-badge pri-3">③</span></td><td><span class="property-tag tag-all">全施設</span></td><td><span class="property-tag tag-chillnn">CHILLNN</span></td><td><span class="task-text">直前割クーポン設定（5/9〜7/19）</span><div class="task-detail">7日前〜 15%オフ。</div></td><td><span class="status-badge status-todo">要対応</span></td></tr>
+      <tr><td><span class="priority-badge pri-3">③</span></td><td><span class="property-tag tag-all">全施設</span></td><td><span class="property-tag tag-beds">Beds24</span></td><td><span class="task-text">Last-Minute Prices 設定（5/9〜7/19）</span><div class="task-detail">7日前〜 15%オフ。</div></td><td><span class="status-badge status-todo">要対応</span></td></tr>
+    </tbody></table>
+    <div class="info-box">💡 AirbnbはPriceLabs Last Minute 35%（設定済み）が唯一の施策。Booking.com / CHILLNN / Beds24で補完する。</div>
   </div>
+</div></div>
 
-  <div class="section">
-    <div class="section-title">🔴 最優先：直前割（閑散期 5/9〜7/19）</div>
-    <table class="task-table">
-      <thead>
-        <tr><th>優先度</th><th>物件</th><th>チャネル</th><th>施策内容</th><th>ステータス</th></tr>
-      </thead>
-      <tbody>
-        <tr class="urgent-row">
-          <td><span class="priority-badge pri-1">①</span></td>
-          <td><span class="property-tag tag-house">house</span> <span class="property-tag tag-nook">nook</span></td>
-          <td><span class="property-tag tag-booking">Booking.com</span></td>
-          <td><span class="task-text">Early Booker Deal 設定（先の予約を増やす）</span><div class="task-detail">30日前予約-10%、60日前-15%。5/9〜7/19対象。</div></td>
-          <td><span class="status-badge status-todo">要対応</span></td>
-        </tr>
-        <tr class="urgent-row">
-          <td><span class="priority-badge pri-2">②</span></td>
-          <td><span class="property-tag tag-halo">HALO</span></td>
-          <td><span class="property-tag tag-booking">Booking.com</span></td>
-          <td><span class="task-text">Flash Deal 設定（稼働最低・直前対策）</span><div class="task-detail">7日前以内 20%オフ。5/9〜7/19対象。</div></td>
-          <td><span class="status-badge status-todo">要対応</span></td>
-        </tr>
-        <tr class="urgent-row">
-          <td><span class="priority-badge pri-2">②</span></td>
-          <td><span class="property-tag tag-photon">photon</span></td>
-          <td><span class="property-tag tag-booking">Booking.com</span></td>
-          <td><span class="task-text">Flash Deal 設定</span><div class="task-detail">7日前以内 15%オフ。5/9〜7/19対象。朝日・ゆうひ・ひなた。</div></td>
-          <td><span class="status-badge status-todo">要対応</span></td>
-        </tr>
-        <tr class="urgent-row">
-          <td><span class="priority-badge pri-2">②</span></td>
-          <td><span class="property-tag tag-hanare">hanare</span></td>
-          <td><span class="property-tag tag-booking">Booking.com</span></td>
-          <td><span class="task-text">Flash Deal + 連泊割引設定</span><div class="task-detail">直前7日以内 15%オフ ＋ 3泊-15%・5泊-20%の連泊割。全4室。</div></td>
-          <td><span class="status-badge status-todo">要対応</span></td>
-        </tr>
-        <tr>
-          <td><span class="priority-badge pri-3">③</span></td>
-          <td><span class="property-tag tag-all">全施設</span></td>
-          <td><span class="property-tag tag-chillnn">CHILLNN</span></td>
-          <td><span class="task-text">直前割クーポン設定（5/9〜7/19）</span><div class="task-detail">管理画面 → クーポン → 7日前〜 15%オフ。</div></td>
-          <td><span class="status-badge status-todo">要対応</span></td>
-        </tr>
-        <tr>
-          <td><span class="priority-badge pri-3">③</span></td>
-          <td><span class="property-tag tag-all">全施設</span></td>
-          <td><span class="property-tag tag-beds">Beds24</span></td>
-          <td><span class="task-text">Last-Minute Prices 設定（5/9〜7/19）</span><div class="task-detail">Price Modifiers → Last-Minute discount。7日前〜 15%オフ。</div></td>
-          <td><span class="status-badge status-todo">要対応</span></td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="info-box">💡 <strong>方針</strong>：AirbnbはPriceLabs連携のため割引設定不可。PriceLabs Last Minute 35%（設定済み）が唯一のAirbnb向け施策。Booking.com / CHILLNN / Beds24で補完する。</div>
-  </div>
-
-</div>
-</div>
-
-<!-- ========== TAB: PriceLabs ========== -->
-<div id="tab-pricelabs" class="tab-content">
-<div class="container">
-
-  <div class="banner banner-green">
-    <div class="icon">✅</div>
-    <div>
-      <div class="title">4/26 PriceLabs Min Price整備 完了！</div>
-      <div class="body">全物件の最低価格が損益分岐点を上回る水準に統一。photon ¥13,500 / hanare ¥12,000 / nook ¥20,000 / HALO ¥12,000</div>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="section-title">物件別稼働率（直近90日）</div>
+<!-- TAB: PriceLabs -->
+<div id="tab-pricelabs" class="tab-content"><div class="container">
+  <div class="banner banner-green"><div class="icon">✅</div><div><div class="title">4/26 PriceLabs Min Price整備 完了！</div><div class="body">全物件の最低価格が損益分岐点を上回る水準に統一。photon ¥13,500 / hanare ¥12,000 / nook ¥20,000 / HALO ¥12,000</div></div></div>
+  <div class="section"><div class="section-title">物件別稼働率（直近90日）</div>
     <div class="progress-section">
       <div class="progress-card"><div class="prop-name"><span>room</span><span style="color:#22c55e">71.9%</span></div><div class="progress-bar-bg"><div class="progress-bar-fill fill-good" style="width:71.9%"></div></div><div class="progress-tasks">ADR ¥17,968 · RevPAR ¥12,910</div></div>
       <div class="progress-card"><div class="prop-name"><span>photon</span><span style="color:#f59e0b">58.5%</span></div><div class="progress-bar-bg"><div class="progress-bar-fill fill-mid" style="width:58.5%"></div></div><div class="progress-tasks">ADR ¥16,049 · RevPAR ¥9,392</div></div>
@@ -383,201 +141,124 @@
       <div class="progress-card"><div class="prop-name"><span>HALO</span><span style="color:#ef4444">35.6%</span></div><div class="progress-bar-bg"><div class="progress-bar-fill fill-low" style="width:35.6%"></div></div><div class="progress-tasks">ADR ¥13,631 · RevPAR ¥4,858</div></div>
     </div>
   </div>
-
-  <div class="section" style="display:none;" id="pricelabs-done-section">
-    <div class="section-title">✅ 完了済みタスク（PriceLabs）</div>
-    <table class="task-table">
-      <thead><tr><th>日付</th><th>物件</th><th>施策</th><th>内容</th><th>ステータス</th></tr></thead>
-      <tbody>
-        <tr class="new-row"><td class="date-cell">2026/4/26</td><td><span class="property-tag tag-photon">photon</span></td><td><span class="task-text">Min Price 引き上げ</span></td><td><span class="task-text">朝日 ¥12,800→<strong>¥13,500</strong>、ゆうひ ¥12,350→<strong>¥13,500</strong></span></td><td><span class="status-badge status-done">✓ 完了</span></td></tr>
-        <tr class="new-row"><td class="date-cell">2026/4/26</td><td><span class="property-tag tag-hanare">hanare</span></td><td><span class="task-text">Min Price 引き上げ</span></td><td><span class="task-text">全4室 ¥9,000→<strong>¥12,000</strong>（ナチュラル・レトロ・ヴィンテージ・タタミ）</span></td><td><span class="status-badge status-done">✓ 完了</span></td></tr>
-        <tr class="new-row"><td class="date-cell">2026/4/26</td><td><span class="property-tag tag-nook">nook</span></td><td><span class="task-text">Base / Min Price 引き下げ</span></td><td><span class="task-text">Base ¥34,356→<strong>¥28,000</strong>、Min ¥22,600→<strong>¥20,000</strong></span></td><td><span class="status-badge status-done">✓ 完了</span></td></tr>
-        <tr class="new-row"><td class="date-cell">2026/4/26</td><td><span class="property-tag tag-halo">HALO</span></td><td><span class="task-text">Min Price 修正</span></td><td><span class="task-text">ツイン ¥10,500→<strong>¥12,000</strong>（損益分岐点¥11,842割れを修正）</span></td><td><span class="status-badge status-done">✓ 完了</span></td></tr>
-        <tr><td class="date-cell">2026/4/25</td><td><span class="property-tag tag-hanare">hanare</span></td><td><span class="task-text">Last Minute割引 強化</span></td><td><span class="task-text">グループ22% → 個別35% Gradual（7日以内）</span></td><td><span class="status-badge status-done">✓ 完了</span></td></tr>
-        <tr><td class="date-cell">2026/4/25</td><td><span class="property-tag tag-halo">HALO</span></td><td><span class="task-text">Last Minute割引 強化</span></td><td><span class="task-text">25% → 35% Gradual（7日以内）</span></td><td><span class="status-badge status-done">✓ 完了</span></td></tr>
-        <tr class="new-row"><td class="date-cell">2026/5/11</td><td><span class="property-tag tag-house">house</span></td><td><span class="task-text">Far Out Premium 無効化</span></td><td><span class="task-text">No Far Out Prices に変更（グループ設定を上書き）</span><div class="task-detail">60日以上先に+20%割増がかかっていたためリードタイムが伸びにくかった。house単体でNo Far Out Pricesを設定し早期予約を促進。</div></td><td><span class="status-badge status-done">✓ 完了</span></td></tr>
-        <tr class="new-row"><td class="date-cell">2026/5/11</td><td><span class="property-tag tag-all">全14リスティング</span></td><td><span class="task-text">繁忙期 Min Stay 2泊設定</span></td><td><span class="task-text">Date Specific Overrides でGW・お盆・SW 全6期間を設定</span><div class="task-detail">GW 2026（4/29〜5/6）・GW 2027（4/29〜5/6）・お盆 2026（8/10〜8/18）・お盆 2027（8/10〜8/18）・SW 2026（9/19〜9/23）・SW 2027（9/20〜9/23）にMin Stay 2泊を設定。グループ「ティピー」共通。</div></td><td><span class="status-badge status-done">✓ 完了</span></td></tr>
-        <tr class="new-row"><td class="date-cell">2026/5/11</td><td><span class="property-tag tag-hanare">hanare</span> <span class="property-tag tag-halo">HALO</span></td><td><span class="task-text">Max Price 引き上げ</span></td><td><span class="task-text">¥20,000 → <strong>¥22,000</strong>（全6リスティング）</span><div class="task-detail">hanare 4室（ナチュラル・レトロ・ヴィンテージ・タタミ）＋ HALO ツイン・トリプル。繁忙期の上限単価を引き上げて収益最大化。</div></td><td><span class="status-badge status-done">✓ 完了</span></td></tr>
-      </tbody>
-    </table>
+  <div class="section" style="display:none;" id="pricelabs-done-section"><div class="section-title">✅ 完了済みタスク（PriceLabs）</div>
+    <table class="task-table"><thead><tr><th>日付</th><th>物件</th><th>施策</th><th>内容</th><th>ステータス</th></tr></thead><tbody>
+      <tr class="new-row"><td class="date-cell">2026/4/25</td><td><span class="property-tag tag-hanare">hanare</span></td><td><span class="task-text">Last Minute割引 強化</span></td><td><span class="task-text">グループ22% → 個別35% Gradual（7日以内）</span></td><td><span class="status-badge status-done">✓ 完了</span></td></tr>
+      <tr class="new-row"><td class="date-cell">2026/4/25</td><td><span class="property-tag tag-halo">HALO</span></td><td><span class="task-text">Last Minute割引 強化</span></td><td><span class="task-text">25% → 35% Gradual（7日以内）</span></td><td><span class="status-badge status-done">✓ 完了</span></td></tr>
+      <tr class="new-row"><td class="date-cell">2026/4/26</td><td><span class="property-tag tag-photon">photon</span></td><td><span class="task-text">Min Price 引き上げ</span></td><td><span class="task-text">朝日 ¥12,800→<strong>¥13,500</strong>、ゆうひ ¥12,350→<strong>¥13,500</strong></span></td><td><span class="status-badge status-done">✓ 完了</span></td></tr>
+      <tr class="new-row"><td class="date-cell">2026/4/26</td><td><span class="property-tag tag-hanare">hanare</span></td><td><span class="task-text">Min Price 引き上げ</span></td><td><span class="task-text">全4室 ¥9,000→<strong>¥12,000</strong></span></td><td><span class="status-badge status-done">✓ 完了</span></td></tr>
+      <tr class="new-row"><td class="date-cell">2026/4/26</td><td><span class="property-tag tag-nook">nook</span></td><td><span class="task-text">Base / Min Price 引き下げ</span></td><td><span class="task-text">Base ¥34,356→<strong>¥28,000</strong>、Min ¥22,600→<strong>¥20,000</strong></span></td><td><span class="status-badge status-done">✓ 完了</span></td></tr>
+      <tr class="new-row"><td class="date-cell">2026/4/26</td><td><span class="property-tag tag-halo">HALO</span></td><td><span class="task-text">Min Price 修正</span></td><td><span class="task-text">ツイン ¥10,500→<strong>¥12,000</strong></span></td><td><span class="status-badge status-done">✓ 完了</span></td></tr>
+      <tr class="new-row"><td class="date-cell">2026/5/11</td><td><span class="property-tag tag-house">house</span></td><td><span class="task-text">Far Out Premium 無効化</span></td><td><span class="task-text">No Far Out Prices に変更（グループ設定を上書き）</span><div class="task-detail">60日以上先の+20%割増を解除し早期予約を促進。</div></td><td><span class="status-badge status-done">✓ 完了</span></td></tr>
+      <tr class="new-row"><td class="date-cell">2026/5/11</td><td><span class="property-tag tag-all">全14リスティング</span></td><td><span class="task-text">繁忙期 Min Stay 2泊設定</span></td><td><span class="task-text">Date Specific Overrides でGW・お盆・SW 全6期間を設定</span><div class="task-detail">GW 2026（4/29〜5/6）・GW 2027（4/29〜5/6）・お盆 2026（8/10〜8/18）・お盆 2027（8/10〜8/18）・SW 2026（9/19〜9/23）・SW 2027（9/20〜9/23）。グループ「ティピー」共通。</div></td><td><span class="status-badge status-done">✓ 完了</span></td></tr>
+      <tr class="new-row"><td class="date-cell">2026/5/11</td><td><span class="property-tag tag-hanare">hanare</span> <span class="property-tag tag-halo">HALO</span></td><td><span class="task-text">Max Price 引き上げ</span></td><td><span class="task-text">¥20,000 → <strong>¥22,000</strong>（全6リスティング）</span><div class="task-detail">hanare 4室＋HALO ツイン・トリプル。繁忙期の上限単価を引き上げて収益最大化。</div></td><td><span class="status-badge status-done">✓ 完了</span></td></tr>
+    </tbody></table>
   </div>
-
-  <div class="section">
-    <div class="section-title">🟡 未対応タスク（PriceLabs）</div>
-    <table class="task-table">
-      <thead><tr><th>優先度</th><th>物件</th><th>施策</th><th>内容・理由</th><th>ステータス</th></tr></thead>
-      <tbody>
-        <tr><td><span class="priority-badge pri-1">①</span></td><td><span class="property-tag tag-house">house</span></td><td><span class="task-text">Min Price 確認・調整</span></td><td><span class="task-text">稼働45.6%・Min ¥28,000前後に調整</span><div class="task-detail">損益分岐 ¥25,377。現在Min未設定</div></td><td><span class="status-badge status-todo">要対応</span></td></tr>
-        <tr><td><span class="priority-badge pri-2">②</span></td><td><span class="property-tag tag-room">room</span></td><td><span class="task-text">週末乗数 引き上げ</span></td><td><span class="task-text">稼働71.9%・週末単価をもっと上げる</span><div class="task-detail">推奨ADR ¥19,800（現状¥17,968から+10%）</div></td><td><span class="status-badge status-todo">要対応</span></td></tr>
-        <tr><td><span class="priority-badge pri-4">検討</span></td><td><span class="property-tag tag-nook">nook</span></td><td><span class="task-text">Far Out Premium 無効化</span></td><td><span class="task-text">60日以降+20%が先の予約を遠ざけている可能性</span></td><td><span class="status-badge status-pending">検討中</span></td></tr>
-      </tbody>
-    </table>
+  <div class="section"><div class="section-title">🟡 未対応タスク（PriceLabs）</div>
+    <table class="task-table"><thead><tr><th>優先度</th><th>物件</th><th>施策</th><th>内容・理由</th><th>ステータス</th></tr></thead><tbody>
+      <tr><td><span class="priority-badge pri-1">①</span></td><td><span class="property-tag tag-house">house</span></td><td><span class="task-text">Min Price 確認・調整</span></td><td><span class="task-text">稼働45.6%・Min ¥28,000前後に調整</span><div class="task-detail">損益分岐 ¥25,377。現在Min未設定</div></td><td><span class="status-badge status-todo">要対応</span></td></tr>
+      <tr><td><span class="priority-badge pri-2">②</span></td><td><span class="property-tag tag-room">room</span></td><td><span class="task-text">週末乗数 引き上げ</span></td><td><span class="task-text">稼働71.9%・週末単価をもっと上げる</span><div class="task-detail">推奨ADR ¥19,800（現状¥17,968から+10%）</div></td><td><span class="status-badge status-todo">要対応</span></td></tr>
+      <tr><td><span class="priority-badge pri-4">検討</span></td><td><span class="property-tag tag-nook">nook</span></td><td><span class="task-text">Far Out Premium 無効化</span></td><td><span class="task-text">60日以降+20%が先の予約を遠ざけている可能性</span></td><td><span class="status-badge status-pending">検討中</span></td></tr>
+    </tbody></table>
   </div>
-
-</div>
-</div>
-
-<!-- ========== TAB: 運営改善 ========== -->
-<div id="tab-ops" class="tab-content">
-<div class="container">
-  <div class="section">
-    <div class="section-title">🔴 緊急・重要</div>
-    <table class="task-table">
-      <thead><tr><th>カテゴリ</th><th>物件</th><th>タスク</th><th>内容・数値</th><th>ステータス</th></tr></thead>
-      <tbody>
-        <tr class="urgent-row"><td><span class="property-tag tag-ops">既存物件</span></td><td><span class="property-tag tag-all">既存4物件</span></td><td><span class="task-text">集客力低下の原因調査</span></td><td><span class="task-text">YTD前年比 <strong style="color:#ef4444">-8.7%</strong></span><div class="task-detail">OTAランキング・レビュー・ADR戦略を再検証</div></td><td><span class="status-badge status-urgent">🚨 緊急</span></td></tr>
-        <tr class="urgent-row"><td><span class="property-tag tag-ops">キャンセル</span></td><td><span class="property-tag tag-all">全物件</span></td><td><span class="task-text">キャンセル率 29.3% 対策</span></td><td><span class="task-text">直近30日で82件キャンセル（有効198件中）</span><div class="task-detail">ノンリファンダブルプラン導入も検討</div></td><td><span class="status-badge status-urgent">🚨 緊急</span></td></tr>
-        <tr><td><span class="property-tag tag-ops">財務</span></td><td><span class="property-tag tag-all">全物件</span></td><td><span class="task-text">人件費比率の改善</span></td><td><span class="task-text">19.1% → 29.7%（<strong style="color:#ef4444">+10.6pt</strong>）</span></td><td><span class="status-badge status-todo">要対応</span></td></tr>
-      </tbody>
-    </table>
+</div></div>
+<!-- TAB: 運営改善 -->
+<div id="tab-ops" class="tab-content"><div class="container">
+  <div class="section"><div class="section-title">🔴 緊急・重要</div>
+    <table class="task-table"><thead><tr><th>カテゴリ</th><th>物件</th><th>タスク</th><th>内容・数値</th><th>ステータス</th></tr></thead><tbody>
+      <tr class="urgent-row"><td><span class="property-tag tag-ops">既存物件</span></td><td><span class="property-tag tag-all">既存4物件</span></td><td><span class="task-text">集客力低下の原因調査</span></td><td><span class="task-text">YTD前年比 <strong style="color:#ef4444">-8.7%</strong></span><div class="task-detail">OTAランキング・レビュー・ADR戦略を再検証</div></td><td><span class="status-badge status-urgent">🚨 緊急</span></td></tr>
+      <tr class="urgent-row"><td><span class="property-tag tag-ops">キャンセル</span></td><td><span class="property-tag tag-all">全物件</span></td><td><span class="task-text">キャンセル率 29.3% 対策</span></td><td><span class="task-text">直近30日で82件キャンセル（有効198件中）</span><div class="task-detail">ノンリファンダブルプラン導入も検討</div></td><td><span class="status-badge status-urgent">🚨 緊急</span></td></tr>
+      <tr><td><span class="property-tag tag-ops">財務</span></td><td><span class="property-tag tag-all">全物件</span></td><td><span class="task-text">人件費比率の改善</span></td><td><span class="task-text">19.1% → 29.7%（<strong style="color:#ef4444">+10.6pt</strong>）</span></td><td><span class="status-badge status-todo">要対応</span></td></tr>
+    </tbody></table>
   </div>
-  <div class="section">
-    <div class="section-title">🟡 重要（今月中）</div>
-    <table class="task-table">
-      <thead><tr><th>カテゴリ</th><th>物件</th><th>タスク</th><th>内容</th><th>ステータス</th></tr></thead>
-      <tbody>
-        <tr class="new-row"><td><span class="property-tag tag-ops">リスティング</span></td><td><span class="property-tag tag-hanare">hanare</span> <span class="property-tag tag-halo">HALO</span></td><td><span class="task-text">キャンセルポリシーの見直し</span></td><td><span class="task-detail">Booking.com上位表示のため、キャンセルポリシーを最適化。柔軟なポリシーに変更することで露出アップを狙う。</span></td><td><span class="status-badge status-todo">要対応</span></td></tr>
-        <tr><td><span class="property-tag tag-ops">直予約</span></td><td><span class="property-tag tag-halo">HALO</span></td><td><span class="task-text">直予約比率 0.0% 改善</span></td><td><span class="task-detail">チェックイン時に再予約QRカードを渡す運用導入</span></td><td><span class="status-badge status-todo">要対応</span></td></tr>
-        <tr><td><span class="property-tag tag-ops">財務</span></td><td><span class="property-tag tag-all">全物件</span></td><td><span class="task-text">MoneyForwardデータ更新</span></td><td><span class="task-detail">最終取得 2026/4/23。月初に定期更新が必要</span></td><td><span class="status-badge status-pending">定期</span></td></tr>
-      </tbody>
-    </table>
+  <div class="section"><div class="section-title">🟡 重要（今月中）</div>
+    <table class="task-table"><thead><tr><th>カテゴリ</th><th>物件</th><th>タスク</th><th>内容</th><th>ステータス</th></tr></thead><tbody>
+      <tr class="new-row"><td><span class="property-tag tag-ops">リスティング</span></td><td><span class="property-tag tag-hanare">hanare</span> <span class="property-tag tag-halo">HALO</span></td><td><span class="task-text">キャンセルポリシーの見直し</span></td><td><span class="task-detail">Booking.com上位表示のため柔軟なポリシーに変更。露出アップを狙う。</span></td><td><span class="status-badge status-todo">要対応</span></td></tr>
+      <tr><td><span class="property-tag tag-ops">直予約</span></td><td><span class="property-tag tag-halo">HALO</span></td><td><span class="task-text">直予約比率 0.0% 改善</span></td><td><span class="task-detail">チェックイン時に再予約QRカードを渡す運用導入</span></td><td><span class="status-badge status-todo">要対応</span></td></tr>
+      <tr><td><span class="property-tag tag-ops">財務</span></td><td><span class="property-tag tag-all">全物件</span></td><td><span class="task-text">MoneyForwardデータ更新</span></td><td><span class="task-detail">最終取得 2026/4/23。月初に定期更新が必要</span></td><td><span class="status-badge status-pending">定期</span></td></tr>
+    </tbody></table>
     <div class="info-box">📊 <strong>財務（2026 YTD）</strong>：売上 ¥16.65M（+15.8%）/ 控除前所得 ¥1.46M（<span style="color:#ef4444">-25.8%</span>）/ 利益率 9.8%（前年14.1%）/ インバウンド 68.9%</div>
   </div>
-</div>
-</div>
+</div></div>
 
-<!-- ========== TAB: リスティング ========== -->
-<div id="tab-listing" class="tab-content">
-<div class="container">
-  <div class="section">
-    <div class="section-title">🔴 緊急</div>
-    <table class="task-table">
-      <thead><tr><th>物件</th><th>チャネル</th><th>タスク</th><th>内容</th><th>ステータス</th></tr></thead>
-      <tbody>
-        <tr class="urgent-row"><td><span class="property-tag tag-all">既存4物件</span></td><td><span class="property-tag tag-all">全OTA</span></td><td><span class="task-text">OTAランキング・露出の見直し</span></td><td><span class="task-text">YTD前年比-8.7%の主因調査</span><div class="task-detail">写真・タイトル・説明文・レビュー返信を総点検</div></td><td><span class="status-badge status-urgent">🚨 緊急</span></td></tr>
-      </tbody>
-    </table>
+<!-- TAB: リスティング -->
+<div id="tab-listing" class="tab-content"><div class="container">
+  <div class="section"><div class="section-title">🔴 緊急</div>
+    <table class="task-table"><thead><tr><th>物件</th><th>チャネル</th><th>タスク</th><th>内容</th><th>ステータス</th></tr></thead><tbody>
+      <tr class="urgent-row"><td><span class="property-tag tag-all">既存4物件</span></td><td><span class="property-tag tag-all">全OTA</span></td><td><span class="task-text">OTAランキング・露出の見直し</span></td><td><span class="task-text">YTD前年比-8.7%の主因調査</span><div class="task-detail">写真・タイトル・説明文・レビュー返信を総点検</div></td><td><span class="status-badge status-urgent">🚨 緊急</span></td></tr>
+    </tbody></table>
   </div>
-  <div class="section">
-    <div class="section-title">🌐 Beds24 予約サイト</div>
-    <table class="task-table">
-      <thead><tr><th>物件</th><th>タスク</th><th>内容</th><th>ステータス</th></tr></thead>
-      <tbody>
-        <tr><td><span class="property-tag tag-all">全施設</span></td><td><span class="task-text">Beds24予約サイト テコ入れ</span></td><td><span class="task-detail">写真・説明文・料金設定・予約フロー全般を点検</span></td><td><span class="status-badge status-todo">要対応</span></td></tr>
-        <tr class="new-row"><td><span class="property-tag tag-all">全施設</span></td><td><span class="task-text">Beds24 開放期間を2027年5月末まで拡張</span></td><td><span class="task-detail">Booking.com上位表示のため、先1年分の空き状況を公開する。現状の開放期間を確認・2027/5末まで延長。</span></td><td><span class="status-badge status-todo">要対応</span></td></tr>
-      </tbody>
-    </table>
+  <div class="section"><div class="section-title">🌐 Beds24 予約サイト</div>
+    <table class="task-table"><thead><tr><th>物件</th><th>タスク</th><th>内容</th><th>ステータス</th></tr></thead><tbody>
+      <tr><td><span class="property-tag tag-all">全施設</span></td><td><span class="task-text">Beds24予約サイト テコ入れ</span></td><td><span class="task-detail">写真・説明文・料金設定・予約フロー全般を点検</span></td><td><span class="status-badge status-todo">要対応</span></td></tr>
+      <tr class="new-row"><td><span class="property-tag tag-all">全施設</span></td><td><span class="task-text">Beds24 開放期間を2027年5月末まで拡張</span></td><td><span class="task-detail">Booking.com上位表示のため先1年分の空き状況を公開。2027/5末まで延長。</span></td><td><span class="status-badge status-todo">要対応</span></td></tr>
+    </tbody></table>
   </div>
-  <div class="section">
-    <div class="section-title">🏠 物件別リスティング改善</div>
-    <table class="task-table">
-      <thead><tr><th>物件</th><th>チャネル</th><th>タスク</th><th>内容</th><th>ステータス</th></tr></thead>
-      <tbody>
-        <tr><td><span class="property-tag tag-house">house</span></td><td><span class="property-tag tag-all">全般</span></td><td><span class="task-text">リスティング全体見直し</span></td><td><span class="task-detail">稼働45.6%・写真・タイトル・説明文強化</span></td><td><span class="status-badge status-todo">要対応</span></td></tr>
-        <tr><td><span class="property-tag tag-hanare">hanare</span></td><td><span class="property-tag tag-booking">Booking.com</span></td><td><span class="task-text">Booking.com 改善</span></td><td><span class="task-detail">写真・説明・施設情報の見直し・レビュー返信強化</span></td><td><span class="status-badge status-todo">要対応</span></td></tr>
-      </tbody>
-    </table>
+  <div class="section"><div class="section-title">🏠 物件別リスティング改善</div>
+    <table class="task-table"><thead><tr><th>物件</th><th>チャネル</th><th>タスク</th><th>内容</th><th>ステータス</th></tr></thead><tbody>
+      <tr><td><span class="property-tag tag-house">house</span></td><td><span class="property-tag tag-all">全般</span></td><td><span class="task-text">リスティング全体見直し</span></td><td><span class="task-detail">稼働45.6%・写真・タイトル・説明文強化</span></td><td><span class="status-badge status-todo">要対応</span></td></tr>
+      <tr><td><span class="property-tag tag-hanare">hanare</span></td><td><span class="property-tag tag-booking">Booking.com</span></td><td><span class="task-text">Booking.com 改善</span></td><td><span class="task-detail">写真・説明・施設情報の見直し・レビュー返信強化</span></td><td><span class="status-badge status-todo">要対応</span></td></tr>
+    </tbody></table>
   </div>
-</div>
-</div>
+</div></div>
 
-<!-- ========== TAB: note ========== -->
-<div id="tab-note" class="tab-content">
-<div class="container">
-  <div class="section">
-    <div class="section-title">📝 記事・コンテンツ更新タスク</div>
-    <table class="task-table">
-      <thead><tr><th>種類</th><th>タイトル / 内容</th><th>メモ</th><th>ステータス</th></tr></thead>
-      <tbody>
-        <tr><td><span class="property-tag tag-note">note記事</span></td><td><span class="task-text">ひとりで小田原に来てよかった話｜静かな港町で過ごす一泊</span></td><td><span class="task-detail">ひとり旅プランと連動。閑散期の平日需要獲得</span></td><td><span class="status-badge status-todo">要対応</span></td></tr>
-        <tr><td><span class="property-tag tag-note">note記事</span></td><td><span class="task-text">小田原観光のおすすめモデルコース｜地元ゲストハウスが教えるリアルな過ごし方</span></td><td><span class="task-detail">SEO・観光客向け集客記事</span></td><td><span class="status-badge status-todo">要対応</span></td></tr>
-        <tr><td><span class="property-tag tag-note">note記事</span></td><td><span class="task-text">箱根の帰りに小田原に泊まる理由</span></td><td><span class="task-detail">箱根旅行者へのリーチ</span></td><td><span class="status-badge status-todo">要対応</span></td></tr>
-        <tr><td><span class="property-tag tag-note">note記事</span></td><td><span class="task-text">Tipy records innってどんな宿？正直レビュー形式で全部教えます</span></td><td><span class="task-detail">ブランディング・ファン獲得</span></td><td><span class="status-badge status-todo">要対応</span></td></tr>
-        <tr><td><span class="property-tag tag-note">note修正</span></td><td><span class="task-text">団体リスティングの修正</span></td><td><span class="task-detail">既存の団体向けリスティングページを最新化</span></td><td><span class="status-badge status-todo">要対応</span></td></tr>
-      </tbody>
-    </table>
+<!-- TAB: note -->
+<div id="tab-note" class="tab-content"><div class="container">
+  <div class="section"><div class="section-title">📝 記事・コンテンツ更新タスク</div>
+    <table class="task-table"><thead><tr><th>種類</th><th>タイトル / 内容</th><th>メモ</th><th>ステータス</th></tr></thead><tbody>
+      <tr><td><span class="property-tag tag-note">note記事</span></td><td><span class="task-text">ひとりで小田原に来てよかった話｜静かな港町で過ごす一泊</span></td><td><span class="task-detail">ひとり旅プランと連動。閑散期の平日需要獲得</span></td><td><span class="status-badge status-todo">要対応</span></td></tr>
+      <tr><td><span class="property-tag tag-note">note記事</span></td><td><span class="task-text">小田原観光のおすすめモデルコース｜地元ゲストハウスが教えるリアルな過ごし方</span></td><td><span class="task-detail">SEO・観光客向け集客記事</span></td><td><span class="status-badge status-todo">要対応</span></td></tr>
+      <tr><td><span class="property-tag tag-note">note記事</span></td><td><span class="task-text">箱根の帰りに小田原に泊まる理由</span></td><td><span class="task-detail">箱根旅行者へのリーチ</span></td><td><span class="status-badge status-todo">要対応</span></td></tr>
+      <tr><td><span class="property-tag tag-note">note記事</span></td><td><span class="task-text">Tipy records innってどんな宿？正直レビュー形式で全部教えます</span></td><td><span class="task-detail">ブランディング・ファン獲得</span></td><td><span class="status-badge status-todo">要対応</span></td></tr>
+      <tr><td><span class="property-tag tag-note">note修正</span></td><td><span class="task-text">団体リスティングの修正</span></td><td><span class="task-detail">既存の団体向けリスティングページを最新化</span></td><td><span class="status-badge status-todo">要対応</span></td></tr>
+    </tbody></table>
     <div class="info-box">💡 インバウンド比率68.9%。note記事は日本語圏ゲスト獲得・ブランディングに有効。記事は仕込みから流入まで1〜2ヶ月かかるので今が書き時。</div>
   </div>
-</div>
-</div>
+</div></div>
 
-<!-- ========== TAB: 完了済み ========== -->
-<div id="tab-done" class="tab-content">
-<div class="container">
-  <div class="banner banner-green">
-    <div class="icon">✅</div>
-    <div>
-      <div class="title">完了済みタスク一覧</div>
-      <div class="body">全タブの完了済みタスクをまとめて表示しています。タスクが完了すると自動的にここに反映されます。</div>
-    </div>
-  </div>
-  <div class="section">
-    <div class="section-title">✅ 完了済みタスク（全カテゴリ）</div>
-    <table class="task-table" id="done-table">
-      <thead><tr><th>カテゴリ</th><th>物件</th><th>タスク / 内容</th><th>完了日</th><th>ステータス</th></tr></thead>
-      <tbody id="done-tbody"></tbody>
-    </table>
+<!-- TAB: 完了済み -->
+<div id="tab-done" class="tab-content"><div class="container">
+  <div class="banner banner-green"><div class="icon">✅</div><div><div class="title">完了済みタスク一覧</div><div class="body">全タブの完了済みタスクをまとめて表示しています。タスクが完了すると自動的にここに反映されます。</div></div></div>
+  <div class="section"><div class="section-title">✅ 完了済みタスク（全カテゴリ）</div>
+    <table class="task-table" id="done-table"><thead><tr><th>カテゴリ</th><th>物件</th><th>タスク / 内容</th><th>完了日</th><th>ステータス</th></tr></thead><tbody id="done-tbody"></tbody></table>
     <div id="done-empty" class="info-box" style="display:none;">まだ完了済みタスクはありません。</div>
   </div>
-</div>
-</div>
+</div></div>
 
 <script>
   const now = new Date();
   const dateStr = now.toLocaleDateString('ja-JP', { year:'numeric', month:'long', day:'numeric', weekday:'short' });
   document.getElementById('today-date').innerHTML = `最終更新<br>${dateStr}`;
-
-  const TAB_LABELS = {
-    'kansan':    '🌿 閑散期対策',
-    'promo':     '🎯 OTAプロモ',
-    'pricelabs': '📊 PriceLabs',
-    'ops':       '⚙️ 運営改善',
-    'listing':   '🏠 リスティング',
-    'note':      '✍️ note',
-  };
-
+  const TAB_LABELS = {'kansan':'🌿 閑散期対策','promo':'🎯 OTAプロモ','pricelabs':'📊 PriceLabs','ops':'⚙️ 運営改善','listing':'🏠 リスティング','note':'✍️ note'};
   function buildDoneTab() {
-    const tbody = document.getElementById('done-tbody');
-    tbody.innerHTML = '';
-    let count = 0;
+    const tbody = document.getElementById('done-tbody'); tbody.innerHTML = ''; let count = 0;
     document.querySelectorAll('.tab-content:not(#tab-done)').forEach(tabEl => {
-      const tabId = tabEl.id.replace('tab-', '');
-      const tabLabel = TAB_LABELS[tabId] || tabId;
+      const tabId = tabEl.id.replace('tab-',''); const tabLabel = TAB_LABELS[tabId]||tabId;
       tabEl.querySelectorAll('tr').forEach(row => {
-        const doneCell = row.querySelector('.status-done');
-        if (!doneCell) return;
-        const propTags = Array.from(row.querySelectorAll('.property-tag')).map(t => t.outerHTML).join(' ');
-        const taskText = row.querySelector('.task-text');
-        const taskName = taskText ? taskText.textContent.trim() : '—';
-        const taskDetail = row.querySelector('.task-detail');
-        const detailHtml = taskDetail ? `<div class="task-detail">${taskDetail.innerHTML}</div>` : '';
-        const dateCell = row.querySelector('.date-cell');
-        const dateText = dateCell ? dateCell.textContent.trim() : '—';
-        const tr = document.createElement('tr');
-        tr.className = 'new-row';
-        tr.innerHTML = `<td><span class="property-tag tag-ops" style="font-size:10px;">${tabLabel}</span></td><td>${propTags || '<span class="property-tag tag-all">—</span>'}</td><td><span class="task-text">${taskName}</span>${detailHtml}</td><td class="date-cell">${dateText}</td><td>${doneCell.outerHTML}</td>`;
-        tbody.appendChild(tr);
-        count++;
+        const doneCell = row.querySelector('.status-done'); if(!doneCell) return;
+        const propTags = Array.from(row.querySelectorAll('.property-tag')).map(t=>t.outerHTML).join(' ');
+        const taskText = row.querySelector('.task-text'); const taskName = taskText?taskText.textContent.trim():'—';
+        const taskDetail = row.querySelector('.task-detail'); const detailHtml = taskDetail?`<div class="task-detail">${taskDetail.innerHTML}</div>`:'';
+        const dateCell = row.querySelector('.date-cell'); const dateText = dateCell?dateCell.textContent.trim():'—';
+        const tr = document.createElement('tr'); tr.className='new-row';
+        tr.innerHTML=`<td><span class="property-tag tag-ops" style="font-size:10px;">${tabLabel}</span></td><td>${propTags||'<span class="property-tag tag-all">—</span>'}</td><td><span class="task-text">${taskName}</span>${detailHtml}</td><td class="date-cell">${dateText}</td><td>${doneCell.outerHTML}</td>`;
+        tbody.appendChild(tr); count++;
       });
     });
-    document.getElementById('done-empty').style.display = count === 0 ? 'block' : 'none';
+    document.getElementById('done-empty').style.display = count===0?'block':'none';
   }
-
-  function switchTab(tabId, btn) {
-    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-    document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
-    document.getElementById('tab-' + tabId).classList.add('active');
-    btn.classList.add('active');
-    if (tabId === 'done') buildDoneTab();
-    updateCounts();
+  function switchTab(tabId,btn) {
+    document.querySelectorAll('.tab-content').forEach(el=>el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(el=>el.classList.remove('active'));
+    document.getElementById('tab-'+tabId).classList.add('active'); btn.classList.add('active');
+    if(tabId==='done') buildDoneTab(); updateCounts();
   }
-
   function updateCounts() {
-    document.getElementById('count-done').textContent    = document.querySelectorAll('.tab-content:not(#tab-done) .status-done').length;
-    document.getElementById('count-urgent').textContent  = document.querySelectorAll('.status-urgent').length;
-    document.getElementById('count-todo').textContent    = document.querySelectorAll('.status-todo').length;
-    document.getElementById('count-wip').textContent     = document.querySelectorAll('.status-wip').length;
-    document.getElementById('count-pending').textContent = document.querySelectorAll('.status-pending').length;
+    document.getElementById('count-done').textContent=document.querySelectorAll('.tab-content:not(#tab-done) .status-done').length;
+    document.getElementById('count-urgent').textContent=document.querySelectorAll('.status-urgent').length;
+    document.getElementById('count-todo').textContent=document.querySelectorAll('.status-todo').length;
+    document.getElementById('count-wip').textContent=document.querySelectorAll('.status-wip').length;
+    document.getElementById('count-pending').textContent=document.querySelectorAll('.status-pending').length;
   }
   updateCounts();
 </script>
